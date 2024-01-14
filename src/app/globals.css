@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  --bg-color-light: #fafaf9; /* Light mode background color */
+  --bg-color-dark: #0e0e0c; /* Dark mode background color */
+  background-color: var(--bg-color-light);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.dark {
+  background-color: var(--bg-color-dark);
+}
+
+#navbar {
+  transition: all 1s ease;
+}
+
+#stroke_text {
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #262626;
+}
+
+@font-face {
+  font-family: "Cabinet";
+  src: url("../../public/fonts/CabinetGrotesk-Variable.ttf");
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("../../public/fonts/GeneralSans-Variable.ttf");
+}
+
+@font-face {
+  font-family: "Cabinet-Extrabold";
+  src: url("../../public/fonts/CabinetGrotesk-Extrabold.ttf");
+}
+
+.underline-left-to-right {
+  position: relative;
+}
+.underline-left-to-right::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #8e8e87;
+  transition: width 0.3s ease;
+}
+.underline-left-to-right:hover::before {
+  width: 100%;
+}
