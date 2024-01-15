@@ -329,8 +329,7 @@ const Home = () => {
                   style={{ fontFamily: "Cabinet, sans-serif" }}
                   className="py-4 lg:text-5xl  md:text-2xl lg:tracking-tight text-lg lg:font-light"
                 >
-                  I am an independent frontend developer, UI/UX designer and
-                  creator based in Dhaka, Bangladesh.
+                  I am an full stack developer based in Dhaka, Bangladesh.
                 </p>
                 <p
                   style={{ fontFamily: "Cabinet, sans-serif" }}
@@ -621,8 +620,7 @@ const Home = () => {
                       style={{ fontFamily: "Cabinet" }}
                       className="text-xl md:text-2xl lg:text-4xl mt-5 text-[#afaf90]"
                     >
-                      I am currently not available for freelance work. I am
-                      accepting new projects starting from February 2022.
+                      I am currently available for industrial work.
                     </p>
                   </div>
                 </div>
