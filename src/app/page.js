@@ -6,12 +6,19 @@ import CustomCursor from "@/components/CustomCursor";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/src/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
-import BackgroundImage from "../../public/background.jpg";
 import Promptopia from "../../public/promptopia.png";
 import Sammo from "../../public/sammo.jpg";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
+import {
+  Link,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
 
 const Home = () => {
   const panel = useRef();
@@ -42,6 +49,18 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  const scrollToAbout = () => {
+    scroll.scrollTo(2350);
+  };
+
+  const scrollToService = () => {
+    scroll.scrollTo(3700);
+  };
+
+  const scrollToContact = () => {
+    scroll.scrollTo(5000);
+  };
 
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin();
@@ -190,17 +209,48 @@ const Home = () => {
                   style={{ fontFamily: "Cabinet, sans-serif" }}
                   className="md:flex items-center gap-8 hidden text-lg"
                 >
-                  <p className="underline-left-to-right">about</p>
-                  <p className="underline-left-to-right">service</p>
-                  <p className="underline-left-to-right">project</p>
+                  <p className="underline-left-to-right">
+                    <Link
+                      activeClass="active"
+                      to="scrollToAboutComponent"
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                    >
+                      about
+                    </Link>
+                  </p>
+                  <p className="underline-left-to-right">
+                    <Link
+                      activeClass="active"
+                      to="scrollToServiceComponent"
+                      spy={true}
+                      smooth={true}
+                      offset={-70}
+                      duration={500}
+                    >
+                      service
+                    </Link>
+                  </p>
+                  {/* <p className="underline-left-to-right">project</p> */}
                 </div>
-                <div
-                  style={{ fontFamily: "Cabinet, sans-serif" }}
-                  className="px-8 py-2 relative group bg-black text-[#FAFAF9] dark:text-black dark:bg-[#FAFAF9]  rounded-3xl text-lg transition-all duration-1000 ease"
+                <Link
+                  activeClass="active"
+                  to="scrollToContactComponent"
+                  spy={true}
+                  smooth={true}
+                  offset={-60}
+                  duration={500}
                 >
-                  Let's Talk
-                  <span className="absolute top-[1.3rem] ml-5 left-0 h-[0.12em] w-0 rounded-full bg-[#8C8C73] duration-300 ease-linear group-hover:w-24"></span>
-                </div>
+                  <div
+                    style={{ fontFamily: "Cabinet, sans-serif" }}
+                    className="px-8 py-2 relative group bg-black text-[#FAFAF9] dark:text-black dark:bg-[#FAFAF9]  rounded-3xl text-lg transition-all duration-1000 ease"
+                  >
+                    Let's Talk
+                    <span className="absolute top-[1.3rem] ml-5 left-0 h-[0.12em] w-0 rounded-full bg-[#8C8C73] duration-300 ease-linear group-hover:w-24"></span>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -247,7 +297,12 @@ const Home = () => {
             </h1>
           </div>
         </div>
-        <div ref={panel3} id="page3" className="min-h-screen w-full mb-[5vw]">
+        <div
+          ref={panel3}
+          id="page3"
+          className="min-h-screen w-full mb-[5vw] element"
+          name="scrollToAboutComponent"
+        >
           <div className="about">
             <div
               style={{
@@ -343,7 +398,11 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div id="page4" className="min-h-screen">
+        <div
+          id="page4"
+          className="min-h-screen element"
+          name="scrollToServiceComponent"
+        >
           <div
             style={{
               fontFamily: "GeneralSans, sans-serif",
@@ -544,7 +603,11 @@ const Home = () => {
             <div className="w-full h-12 bg-orange-300"></div>
           </div>
         </div> */}
-        <div id="page6" className="min-h-screen mt-24 w-full md:px-14">
+        <div
+          id="page6"
+          className="min-h-screen mt-24 w-full md:px-14 element"
+          name="scrollToContactComponent"
+        >
           <div className="contact">
             <div
               style={{
@@ -746,15 +809,27 @@ const Home = () => {
                     My Digital Spaces
                   </h4>
                   <div className="space-y-3 md:space-y-4 md:ml-1">
-                    <a href="" className="flex gap-2 items-center">
+                    <a
+                      href="https://github.com/Pro-Sammo"
+                      target="_blank"
+                      className="flex gap-2 items-center"
+                    >
                       <FaGithubSquare color="8C8C73" size={20} />
                       <p className="underline-left-to-right">Github</p>
                     </a>
-                    <a href="" className="flex gap-2 items-center">
+                    <a
+                      href="https://www.linkedin.com/in/sirajam-sadekeen-sammo-56b7141a9/"
+                      target="_blank"
+                      className="flex gap-2 items-center"
+                    >
                       <FaLinkedin color="8C8C73" size={20} />{" "}
                       <p className="underline-left-to-right">LinkedIn</p>
                     </a>
-                    <a href="" className="flex gap-2 items-center">
+                    <a
+                      href="https://www.instagram.com/ss_sammo/"
+                      target="_blank"
+                      className="flex gap-2 items-center"
+                    >
                       <FaInstagramSquare color="8C8C73" size={20} />
                       <p className="underline-left-to-right">Instagram</p>
                     </a>
